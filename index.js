@@ -3,7 +3,7 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let eventRouter = require('./eventRoutes');
 let association = require('./schemas').associationModel;
-let associations = associations = require('./associations.json');
+let associations = require('./associations.json');
 
 let app = express();
 app.use(bodyParser.json());
@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1/database', {useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/database', {useMongoClient: true});
 mongoose.connection.once('open', () => {
   console.log('Connected to database');
   association.on('index', error => {
