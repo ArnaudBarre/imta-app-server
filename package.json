@@ -1,0 +1,14 @@
+{
+  "name": "imta-app-server",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Arnaud Barré <arnaudbarremn@gmail.com>",
+  "scripts": {
+    "start": "node index"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.5"
+  }
+}
